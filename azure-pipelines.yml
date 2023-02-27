@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure Sponsorship(24e0c215-7514-4b29-b55f-cf45c6b5f603)'
+    subscriptionId: '24e0c215-7514-4b29-b55f-cf45c6b5f603'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'CA-Test-1rg'
+    location: 'Central US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/CA-The-destroyer/TestGarbage.mkI/main/CreateWebApp/azuredeploy.json'
+    overrideParameters: '-projectName catestpipeline'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
