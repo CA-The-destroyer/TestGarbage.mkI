@@ -20,7 +20,7 @@ steps:
     resourceGroupName: 'CA-Test-1rg'
     location: 'Central US'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/CA-The-destroyer/TestGarbage.mkI/main/CreateWebApp/azuredeploy.json?token=GHSAT0AAAAAAB7K6RP66H5XGZVJDLFUJ5R4Y75CB2Q'
+    csmFileLink: 'https://github.com/CA-The-destroyer/TestGarbage.mkI/blob/main/CreateWebApp/azuredeploy.json'
     overrideParameters: '-projectName catestpipeline'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
